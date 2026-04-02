@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: rgba(124, 58, 237, 0.3);
+    color: #F8F8F2;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0A0A0F;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2A2A3A;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3A3A4A;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-purple-400;
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 60px rgba(124, 58, 237, 0.15), 0 0 120px rgba(124, 58, 237, 0.05);
+  }
+
+  .glow-green {
+    box-shadow: 0 0 40px rgba(0, 184, 148, 0.1);
+  }
+
+  .code-block {
+    @apply bg-surface border border-border rounded-card font-mono text-sm overflow-x-auto;
+  }
+
+  .code-block .line-number {
+    @apply text-muted select-none pr-4 text-right inline-block w-8;
+  }
+
+  .code-block .key {
+    @apply text-accent;
+  }
+
+  .code-block .string {
+    @apply text-green;
+  }
+
+  .code-block .number {
+    @apply text-orange-400;
+  }
+
+  .code-block .boolean {
+    @apply text-sky-400;
+  }
+
+  .code-block .comment {
+    @apply text-muted italic;
+  }
+
+  .code-block .keyword {
+    @apply text-pink-400;
+  }
+
+  .code-block .function {
+    @apply text-yellow-300;
+  }
+
+  .code-block .variable {
+    @apply text-sky-300;
+  }
+
+  .code-block .import {
+    @apply text-pink-400;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300;
+  }
+
+  .card-hover:hover {
+    @apply border-accent/40;
+    box-shadow: 0 0 30px rgba(124, 58, 237, 0.08);
+  }
+
+  .prose-dark {
+    @apply prose prose-invert prose-headings:text-text prose-p:text-muted prose-a:text-accent prose-strong:text-text prose-code:text-green prose-code:bg-surface prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:before:content-none prose-code:after:content-none prose-pre:bg-surface prose-pre:border prose-pre:border-border prose-hr:border-border prose-th:text-text prose-td:text-muted;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-fade-in-delay-1 {
+  animation: fadeIn 0.6s ease-out 0.1s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-delay-2 {
+  animation: fadeIn 0.6s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-delay-3 {
+  animation: fadeIn 0.6s ease-out 0.3s forwards;
+  opacity: 0;
+}
