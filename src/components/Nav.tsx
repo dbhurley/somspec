@@ -7,21 +7,21 @@ const links = [
   { href: '/spec', label: 'Specification' },
   { href: '/reference', label: 'Reference' },
   { href: '/changelog', label: 'Changelog' },
-  { href: 'https://github.com/plasmate-labs/plasmate', label: 'GitHub', external: true },
+  { href: 'https://github.com/nicholasgriffintn/som-spec', label: 'GitHub', external: true },
 ]
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-bg/80 backdrop-blur-xl">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-bg/90 backdrop-blur-xl">
       <div className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2.5 group">
-          <div className="w-8 h-8 rounded-lg bg-accent/20 flex items-center justify-center border border-accent/30 group-hover:bg-accent/30 transition-colors">
-            <span className="text-accent font-bold text-sm">S</span>
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="w-8 h-8 rounded flex items-center justify-center border border-accent/30 group-hover:border-accent/60 transition-colors" style={{ background: 'rgba(199, 168, 83, 0.08)' }}>
+            <span className="text-accent font-display font-semibold text-sm">S</span>
           </div>
-          <span className="font-semibold text-text tracking-tight">
-            SOM<span className="text-muted font-normal">spec</span>
+          <span className="font-display text-text tracking-tight text-[15px]">
+            SOM<span className="text-muted font-serif font-normal">spec</span>
           </span>
         </Link>
 
@@ -32,7 +32,7 @@ export default function Nav() {
               href={link.href}
               target={link.external ? '_blank' : undefined}
               rel={link.external ? 'noopener noreferrer' : undefined}
-              className="text-sm text-muted hover:text-text transition-colors"
+              className="text-sm text-muted hover:text-accent transition-colors font-serif"
             >
               {link.label}
             </Link>
@@ -64,7 +64,7 @@ export default function Nav() {
                 target={link.external ? '_blank' : undefined}
                 rel={link.external ? 'noopener noreferrer' : undefined}
                 onClick={() => setOpen(false)}
-                className="text-sm text-muted hover:text-text transition-colors py-1"
+                className="text-sm text-muted hover:text-accent transition-colors py-1 font-serif"
               >
                 {link.label}
               </Link>

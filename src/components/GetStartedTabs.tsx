@@ -51,15 +51,17 @@ export default function GetStartedTabs() {
 
   return (
     <div>
-      <div className="flex gap-1 mb-4 bg-surface/50 rounded-lg p-1 inline-flex border border-border">
+      <div className="flex gap-0 mb-4 inline-flex">
         {tabs.map((tab) => (
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
+            className={`px-5 py-2.5 text-sm font-mono tracking-wide transition-all border ${
               activeTab === tab.id
-                ? 'bg-accent text-white shadow-sm'
-                : 'text-muted hover:text-text'
+                ? 'bg-accent/10 text-accent border-accent/30'
+                : 'text-muted hover:text-text border-border hover:border-accent/20 bg-surface/30'
+            } ${
+              tab.id === 'cli' ? 'rounded-l-card' : tab.id === 'python' ? 'rounded-r-card' : ''
             }`}
           >
             {tab.label}

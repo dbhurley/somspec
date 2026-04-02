@@ -7,12 +7,15 @@ export const metadata: Metadata = {
 
 function Section({ id, number, title, children }: { id: string; number: string; title: string; children: React.ReactNode }) {
   return (
-    <section id={id} className="mb-16 scroll-mt-24">
-      <div className="flex items-center gap-3 mb-6">
-        <span className="text-xs font-mono text-accent bg-accent/10 px-2 py-0.5 rounded">{number}</span>
-        <h2 className="text-2xl font-bold text-text">{title}</h2>
+    <section id={id} className="mb-20 scroll-mt-24 relative">
+      <div className="flex gap-6 items-start mb-6">
+        <span className="font-display text-6xl font-light text-accent/[0.08] leading-none select-none hidden md:block shrink-0 -ml-2 pt-1">{number}</span>
+        <div>
+          <span className="text-xs font-mono text-accent/40 tracking-[0.15em] block mb-2">{number}</span>
+          <h2 className="text-2xl font-display font-light text-text">{title}</h2>
+        </div>
       </div>
-      <div className="prose-dark prose-sm max-w-none space-y-4 text-muted leading-relaxed">
+      <div className="md:pl-[4.5rem] space-y-4 text-muted font-serif leading-body text-[15px]">
         {children}
       </div>
     </section>
@@ -22,7 +25,7 @@ function Section({ id, number, title, children }: { id: string; number: string; 
 function SubSection({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div className="mt-8">
-      <h3 className="text-lg font-semibold text-text mb-3">{title}</h3>
+      <h3 className="text-lg font-display font-light text-text mb-3">{title}</h3>
       <div className="space-y-3">{children}</div>
     </div>
   )
@@ -30,13 +33,13 @@ function SubSection({ title, children }: { title: string; children: React.ReactN
 
 function Field({ name, type, required, children }: { name: string; type: string; required?: boolean; children: React.ReactNode }) {
   return (
-    <div className="pl-4 border-l-2 border-accent/20 py-2">
+    <div className="pl-4 border-l-2 border-accent/15 py-2">
       <div className="flex items-center gap-2 mb-1">
-        <code className="text-green text-sm font-mono">{name}</code>
-        <span className="text-xs text-muted font-mono">({type})</span>
-        {required && <span className="text-[10px] uppercase tracking-wider text-accent bg-accent/10 px-1.5 py-0.5 rounded">required</span>}
+        <code className="text-code text-sm font-mono">{name}</code>
+        <span className="text-xs text-muted/50 font-mono">({type})</span>
+        {required && <span className="text-[10px] uppercase tracking-wider text-accent bg-accent/10 px-1.5 py-0.5 rounded font-mono">required</span>}
       </div>
-      <p className="text-sm text-muted">{children}</p>
+      <p className="text-sm text-muted font-serif">{children}</p>
     </div>
   )
 }
@@ -44,26 +47,28 @@ function Field({ name, type, required, children }: { name: string; type: string;
 export default function SpecPage() {
   return (
     <div className="mx-auto max-w-4xl px-6 py-16 md:py-24">
-      <div className="mb-16">
-        <span className="text-xs font-mono uppercase tracking-widest text-accent mb-3 block">Specification</span>
-        <h1 className="text-4xl md:text-5xl font-extrabold text-text mb-4">
-          Semantic Object Model <span className="text-muted font-normal">v1.0</span>
+      <div className="mb-20">
+        <span className="text-xs font-mono uppercase tracking-[0.2em] text-accent/60 mb-4 block">Specification</span>
+        <h1 className="text-4xl md:text-5xl font-display font-light text-text mb-4 leading-tight">
+          Semantic Object Model <span className="text-muted/30">v1.0</span>
         </h1>
-        <p className="text-lg text-muted leading-relaxed max-w-2xl">
+        <p className="text-lg text-muted font-serif leading-body max-w-2xl">
           SOM is an open specification for representing web pages as structured JSON documents
           optimized for consumption by large language models and AI agents.
         </p>
-        <div className="mt-6 flex flex-wrap gap-3 text-sm text-muted">
-          <span className="px-3 py-1 bg-surface border border-border rounded-full">Version 1.0</span>
-          <span className="px-3 py-1 bg-surface border border-border rounded-full">April 2026</span>
-          <span className="px-3 py-1 bg-surface border border-border rounded-full">Apache 2.0</span>
+        <div className="mt-6 flex flex-wrap gap-3 text-xs font-mono text-muted">
+          <span className="px-3 py-1.5 border border-border/60 rounded-full">Version 1.0</span>
+          <span className="px-3 py-1.5 border border-border/60 rounded-full">April 2026</span>
+          <span className="px-3 py-1.5 border border-border/60 rounded-full">Apache 2.0</span>
         </div>
       </div>
 
+      <hr className="hr-ornament mb-16" />
+
       {/* Table of Contents */}
-      <nav className="mb-16 p-6 bg-surface border border-border rounded-card">
-        <h2 className="text-sm font-semibold text-text uppercase tracking-wider mb-4">Contents</h2>
-        <ol className="space-y-2 text-sm">
+      <nav className="mb-20 p-6 bg-surface border border-border rounded-card">
+        <h2 className="text-sm font-display text-text uppercase tracking-wider mb-4">Contents</h2>
+        <ol className="space-y-2 text-sm font-serif">
           {[
             ['1', 'introduction', 'Introduction'],
             ['2', 'design-goals', 'Design Goals'],
@@ -78,7 +83,7 @@ export default function SpecPage() {
           ].map(([num, id, title]) => (
             <li key={id}>
               <a href={`#${id}`} className="text-muted hover:text-accent transition-colors">
-                <span className="text-accent/60 font-mono mr-2">{num}.</span>
+                <span className="text-accent/30 font-mono mr-3 text-xs">{num.padStart(2, '0')}</span>
                 {title}
               </a>
             </li>
@@ -115,8 +120,8 @@ export default function SpecPage() {
             ['Stable references', 'SHA-256 derived element IDs are deterministic. The same element produces the same ID across page refreshes, enabling reliable multi-step workflows.'],
             ['Publisher compatibility', 'SOM documents can be served directly by publishers as an alternative representation of their pages, similar to RSS or JSON feeds.'],
           ].map(([title, desc]) => (
-            <li key={title} className="pl-4 border-l-2 border-accent/20 py-1">
-              <strong className="text-text">{title}.</strong> {desc}
+            <li key={title} className="pl-4 border-l-2 border-accent/15 py-1">
+              <strong className="text-text font-display">{title}.</strong> {desc}
             </li>
           ))}
         </ul>
@@ -162,19 +167,19 @@ export default function SpecPage() {
         <SubSection title="Region detection precedence">
           <p>Implementations must detect regions using the following precedence order:</p>
           <ol className="list-decimal list-inside space-y-2 mt-3">
-            <li><strong className="text-text">ARIA roles</strong> - Elements with explicit role attributes (role=&quot;navigation&quot;, role=&quot;main&quot;)</li>
-            <li><strong className="text-text">HTML5 landmarks</strong> - Semantic elements (nav, main, aside, header, footer)</li>
-            <li><strong className="text-text">Class/ID heuristics</strong> - Common naming patterns (&quot;sidebar&quot;, &quot;nav&quot;, &quot;footer&quot;)</li>
-            <li><strong className="text-text">Link density analysis</strong> - Areas with high link density are classified as navigation</li>
-            <li><strong className="text-text">Content heuristics</strong> - Text density, heading presence, content patterns</li>
-            <li><strong className="text-text">Fallback</strong> - Remaining content is grouped under role &quot;generic&quot;</li>
+            <li><strong className="text-text font-display">ARIA roles</strong> - Elements with explicit role attributes (role=&quot;navigation&quot;, role=&quot;main&quot;)</li>
+            <li><strong className="text-text font-display">HTML5 landmarks</strong> - Semantic elements (nav, main, aside, header, footer)</li>
+            <li><strong className="text-text font-display">Class/ID heuristics</strong> - Common naming patterns (&quot;sidebar&quot;, &quot;nav&quot;, &quot;footer&quot;)</li>
+            <li><strong className="text-text font-display">Link density analysis</strong> - Areas with high link density are classified as navigation</li>
+            <li><strong className="text-text font-display">Content heuristics</strong> - Text density, heading presence, content patterns</li>
+            <li><strong className="text-text font-display">Fallback</strong> - Remaining content is grouped under role &quot;generic&quot;</li>
           </ol>
         </SubSection>
         <SubSection title="Standard roles">
           <p>
-            The following region roles are defined: <code>main</code>, <code>navigation</code>,{' '}
-            <code>aside</code>, <code>header</code>, <code>footer</code>, <code>search</code>,{' '}
-            <code>form</code>, <code>dialog</code>, <code>section</code>, <code>generic</code>.
+            The following region roles are defined: <code className="text-code bg-surface px-1.5 py-0.5 rounded text-sm font-mono">main</code>, <code className="text-code bg-surface px-1.5 py-0.5 rounded text-sm font-mono">navigation</code>,{' '}
+            <code className="text-code bg-surface px-1.5 py-0.5 rounded text-sm font-mono">aside</code>, <code className="text-code bg-surface px-1.5 py-0.5 rounded text-sm font-mono">header</code>, <code className="text-code bg-surface px-1.5 py-0.5 rounded text-sm font-mono">footer</code>, <code className="text-code bg-surface px-1.5 py-0.5 rounded text-sm font-mono">search</code>,{' '}
+            <code className="text-code bg-surface px-1.5 py-0.5 rounded text-sm font-mono">form</code>, <code className="text-code bg-surface px-1.5 py-0.5 rounded text-sm font-mono">dialog</code>, <code className="text-code bg-surface px-1.5 py-0.5 rounded text-sm font-mono">section</code>, <code className="text-code bg-surface px-1.5 py-0.5 rounded text-sm font-mono">generic</code>.
           </p>
         </SubSection>
         <SubSection title="Region fields">
@@ -239,13 +244,13 @@ export default function SpecPage() {
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-border">
-                <th className="py-3 px-4 text-left font-medium text-text">Type</th>
-                <th className="py-3 px-4 text-left font-medium text-text">Description</th>
-                <th className="py-3 px-4 text-left font-medium text-text">Attributes</th>
-                <th className="py-3 px-4 text-left font-medium text-text">Actions</th>
+                <th className="py-3 px-4 text-left font-display font-medium text-text">Type</th>
+                <th className="py-3 px-4 text-left font-display font-medium text-text">Description</th>
+                <th className="py-3 px-4 text-left font-display font-medium text-text">Attributes</th>
+                <th className="py-3 px-4 text-left font-display font-medium text-text">Actions</th>
               </tr>
             </thead>
-            <tbody className="text-muted">
+            <tbody className="text-muted font-serif">
               {[
                 ['link', 'Hyperlinks and anchor elements', 'href, visited', 'click'],
                 ['button', 'Clickable controls and submit buttons', 'type, form_action', 'click'],
@@ -264,7 +269,7 @@ export default function SpecPage() {
                 ['details', 'Collapsible disclosure widgets', 'open, summary', 'toggle'],
               ].map(([type, desc, attrs, actions]) => (
                 <tr key={type} className="border-b border-border/30 hover:bg-surface/30">
-                  <td className="py-3 px-4 font-mono text-green text-sm">{type}</td>
+                  <td className="py-3 px-4 font-mono text-code text-sm">{type}</td>
                   <td className="py-3 px-4">{desc}</td>
                   <td className="py-3 px-4 font-mono text-xs">{attrs}</td>
                   <td className="py-3 px-4 font-mono text-xs">{actions}</td>
@@ -283,7 +288,7 @@ export default function SpecPage() {
         </p>
         <SubSection title="Hash algorithm">
           <div className="bg-surface border border-border rounded-card p-4 font-mono text-sm mt-2">
-            <p className="text-muted mb-2">// Hash input construction</p>
+            <p className="text-muted/40 mb-2">// Hash input construction</p>
             <p className="text-text">input = origin + &quot;|&quot; + role + &quot;|&quot; + accessible_name + &quot;|&quot; + dom_path</p>
             <p className="text-text mt-2">id = &quot;e_&quot; + SHA256(input).hex()[0:12]</p>
           </div>
@@ -304,10 +309,10 @@ export default function SpecPage() {
         </SubSection>
         <SubSection title="Guarantees">
           <ul className="list-none space-y-2">
-            <li className="pl-4 border-l-2 border-green/30 py-1"><strong className="text-text">Deterministic:</strong> Same inputs always produce the same ID.</li>
-            <li className="pl-4 border-l-2 border-green/30 py-1"><strong className="text-text">Stable:</strong> IDs do not change across page refreshes when content is unchanged.</li>
-            <li className="pl-4 border-l-2 border-green/30 py-1"><strong className="text-text">Unique:</strong> Hash collisions are statistically negligible at 12 hex characters (48 bits).</li>
-            <li className="pl-4 border-l-2 border-green/30 py-1"><strong className="text-text">Compact:</strong> 14 characters total (e_ prefix + 12 hex) is efficient for token usage.</li>
+            <li className="pl-4 border-l-2 border-success/20 py-1"><strong className="text-text font-display">Deterministic:</strong> Same inputs always produce the same ID.</li>
+            <li className="pl-4 border-l-2 border-success/20 py-1"><strong className="text-text font-display">Stable:</strong> IDs do not change across page refreshes when content is unchanged.</li>
+            <li className="pl-4 border-l-2 border-success/20 py-1"><strong className="text-text font-display">Unique:</strong> Hash collisions are statistically negligible at 12 hex characters (48 bits).</li>
+            <li className="pl-4 border-l-2 border-success/20 py-1"><strong className="text-text font-display">Compact:</strong> 14 characters total (e_ prefix + 12 hex) is efficient for token usage.</li>
           </ul>
         </SubSection>
       </Section>

@@ -42,19 +42,20 @@ export default function ImplementationCards() {
           target="_blank"
           rel="noopener noreferrer"
           className="block p-6 bg-surface border border-border rounded-card card-hover group"
+          style={{ borderLeftWidth: '3px', borderLeftColor: 'rgba(199, 168, 83, 0.25)' }}
         >
           <div className="flex items-start justify-between mb-3">
-            <h3 className="font-semibold text-text group-hover:text-accent transition-colors">
+            <h3 className="font-display text-text group-hover:text-accent transition-colors">
               {impl.name}
             </h3>
             {impl.badge && (
-              <span className="text-[10px] font-medium uppercase tracking-wider text-green bg-green/10 px-2 py-0.5 rounded-full whitespace-nowrap">
+              <span className="text-[10px] font-mono uppercase tracking-wider text-success bg-success/10 px-2 py-0.5 rounded-full whitespace-nowrap">
                 {impl.badge}
               </span>
             )}
           </div>
-          <p className="text-sm text-muted mb-4">{impl.description}</p>
-          <span className="text-xs text-accent font-mono">{impl.linkLabel}</span>
+          <p className="text-sm text-muted mb-4 font-serif leading-body">{impl.description}</p>
+          <span className="text-xs text-accent/60 font-mono">{impl.linkLabel}</span>
         </a>
       ))}
     </div>

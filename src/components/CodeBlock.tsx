@@ -57,11 +57,11 @@ export default function CodeBlock({
   return (
     <div className={`code-block ${className}`}>
       <div className="flex items-center justify-between px-4 py-2.5 border-b border-border">
-        <span className="text-xs text-muted uppercase tracking-wider">{language}</span>
+        <span className="text-[11px] text-muted/60 uppercase tracking-[0.15em] font-mono">{language}</span>
         <div className="flex gap-1.5">
-          <div className="w-2.5 h-2.5 rounded-full bg-border" />
-          <div className="w-2.5 h-2.5 rounded-full bg-border" />
-          <div className="w-2.5 h-2.5 rounded-full bg-border" />
+          <div className="w-2 h-2 rounded-full" style={{ background: '#E63946', opacity: 0.4 }} />
+          <div className="w-2 h-2 rounded-full" style={{ background: '#C7A853', opacity: 0.4 }} />
+          <div className="w-2 h-2 rounded-full" style={{ background: '#52B788', opacity: 0.4 }} />
         </div>
       </div>
       <pre className="p-4 overflow-x-auto">

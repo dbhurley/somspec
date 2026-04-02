@@ -135,14 +135,14 @@ export default function SpecAccordion() {
             onClick={() => setOpenIndex(openIndex === i ? null : i)}
             className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-surface/50 transition-colors"
           >
-            <div className="flex items-center gap-3">
-              <span className="text-xs font-mono text-accent bg-accent/10 px-2 py-0.5 rounded">
+            <div className="flex items-center gap-4">
+              <span className="text-xs font-mono text-accent/50 tracking-wider">
                 {String(i + 1).padStart(2, '0')}
               </span>
-              <span className="font-medium text-text">{section.title}</span>
+              <span className="font-display text-text">{section.title}</span>
             </div>
             <svg
-              className={`w-4 h-4 text-muted transition-transform duration-200 ${
+              className={`w-4 h-4 text-accent/40 transition-transform duration-300 ${
                 openIndex === i ? 'rotate-180' : ''
               }`}
               fill="none"
@@ -155,7 +155,7 @@ export default function SpecAccordion() {
           </button>
           {openIndex === i && (
             <div className="px-6 pb-6 border-t border-border/50">
-              <div className="pt-4 prose-dark prose-sm max-w-none">
+              <div className="pt-4 max-w-none font-serif">
                 {section.content.split('\n\n').map((paragraph, j) => {
                   if (paragraph.startsWith('|')) {
                     const lines = paragraph.trim().split('\n')
@@ -169,7 +169,7 @@ export default function SpecAccordion() {
                           <thead>
                             <tr className="border-b border-border">
                               {headers.map((h, hi) => (
-                                <th key={hi} className="py-2 px-3 text-left font-medium text-text">{h}</th>
+                                <th key={hi} className="py-2 px-3 text-left font-display font-medium text-text text-sm">{h}</th>
                               ))}
                             </tr>
                           </thead>
@@ -179,9 +179,9 @@ export default function SpecAccordion() {
                                 {row.map((cell, ci) => (
                                   <td
                                     key={ci}
-                                    className="py-2 px-3 text-muted"
+                                    className="py-2 px-3 text-muted text-sm"
                                     dangerouslySetInnerHTML={{
-                                      __html: cell.replace(/\*\*(.*?)\*\*/g, '<strong class="text-text">$1</strong>'),
+                                      __html: cell.replace(/\*\*(.*?)\*\*/g, '<strong class="text-text font-display">$1</strong>'),
                                     }}
                                   />
                                 ))}
@@ -195,16 +195,16 @@ export default function SpecAccordion() {
                   if (paragraph.startsWith('- ') || paragraph.match(/^\d\./)) {
                     const items = paragraph.split('\n')
                     return (
-                      <ul key={j} className="mt-3 space-y-1.5">
+                      <ul key={j} className="mt-3 space-y-2">
                         {items.map((item, k) => (
                           <li
                             key={k}
-                            className="text-muted text-sm pl-4 relative before:content-[''] before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:rounded-full before:bg-accent/40"
+                            className="text-muted text-sm leading-body pl-4 relative before:content-[''] before:absolute before:left-0 before:top-[0.65em] before:w-1.5 before:h-1.5 before:rounded-full before:bg-accent/20"
                             dangerouslySetInnerHTML={{
                               __html: item
                                 .replace(/^[-\d.]+\s*/, '')
                                 .replace(/\*\*(.*?)\*\*/g, '<strong class="text-text">$1</strong>')
-                                .replace(/`([^`]+)`/g, '<code class="text-green bg-surface px-1 py-0.5 rounded text-xs">$1</code>'),
+                                .replace(/`([^`]+)`/g, '<code class="text-code bg-surface px-1.5 py-0.5 rounded text-xs font-mono">$1</code>'),
                             }}
                           />
                         ))}
@@ -214,11 +214,11 @@ export default function SpecAccordion() {
                   return (
                     <p
                       key={j}
-                      className="mt-3 text-sm text-muted leading-relaxed"
+                      className="mt-3 text-sm text-muted leading-body"
                       dangerouslySetInnerHTML={{
                         __html: paragraph
                           .replace(/\*\*(.*?)\*\*/g, '<strong class="text-text">$1</strong>')
-                          .replace(/`([^`]+)`/g, '<code class="text-green bg-surface px-1 py-0.5 rounded text-xs">$1</code>'),
+                          .replace(/`([^`]+)`/g, '<code class="text-code bg-surface px-1.5 py-0.5 rounded text-xs font-mono">$1</code>'),
                       }}
                     />
                   )

@@ -47,45 +47,47 @@ const releases = [
 export default function ChangelogPage() {
   return (
     <div className="mx-auto max-w-4xl px-6 py-16 md:py-24">
-      <div className="mb-16">
-        <span className="text-xs font-mono uppercase tracking-widest text-accent mb-3 block">History</span>
-        <h1 className="text-4xl md:text-5xl font-extrabold text-text mb-4">Changelog</h1>
-        <p className="text-lg text-muted leading-relaxed max-w-2xl">
+      <div className="mb-20">
+        <span className="text-xs font-mono uppercase tracking-[0.2em] text-accent/60 mb-4 block">History</span>
+        <h1 className="text-4xl md:text-5xl font-display font-light text-text mb-4">Changelog</h1>
+        <p className="text-lg text-muted font-serif leading-body max-w-2xl">
           Version history of the SOM specification. Each release documents changes to the format,
           new element types, and conformance updates.
         </p>
       </div>
 
+      <hr className="hr-ornament mb-16" />
+
       <div className="space-y-12">
         {releases.map((release) => (
           <article
             key={release.version}
-            className="relative pl-8 border-l-2 border-accent/30"
+            className="relative pl-8 border-l-2 border-accent/20"
           >
             <div className="absolute left-0 top-0 -translate-x-[9px] w-4 h-4 rounded-full bg-accent border-4 border-bg" />
 
-            <div className="mb-6">
+            <div className="mb-8">
               <div className="flex flex-wrap items-center gap-3 mb-2">
-                <h2 className="text-2xl font-bold text-text">v{release.version}</h2>
-                <span className="text-sm text-muted font-mono">{release.date}</span>
-                <span className="text-[10px] font-medium uppercase tracking-wider text-green bg-green/10 px-2 py-0.5 rounded-full">
+                <h2 className="text-2xl font-display font-light text-text">v{release.version}</h2>
+                <span className="text-sm text-muted/50 font-mono">{release.date}</span>
+                <span className="text-[10px] font-mono uppercase tracking-wider text-success bg-success/10 px-2 py-0.5 rounded-full">
                   Latest
                 </span>
               </div>
-              <h3 className="text-lg text-muted mb-2">{release.title}</h3>
-              <p className="text-sm text-muted/80">{release.description}</p>
+              <h3 className="text-lg text-muted font-display mb-2">{release.title}</h3>
+              <p className="text-sm text-muted/60 font-serif">{release.description}</p>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-8">
               {release.changes.map((group) => (
                 <div key={group.category}>
-                  <h4 className="text-sm font-semibold text-text uppercase tracking-wider mb-3">
+                  <h4 className="text-sm font-display text-text uppercase tracking-wider mb-3">
                     {group.category}
                   </h4>
                   <ul className="space-y-2">
                     {group.items.map((item, i) => (
-                      <li key={i} className="flex gap-3 text-sm text-muted">
-                        <span className="text-accent mt-1 shrink-0">+</span>
+                      <li key={i} className="flex gap-3 text-sm text-muted font-serif leading-body">
+                        <span className="text-accent mt-0.5 shrink-0">+</span>
                         <span>{item}</span>
                       </li>
                     ))}
@@ -98,10 +100,10 @@ export default function ChangelogPage() {
       </div>
 
       <div className="mt-20 p-6 bg-surface border border-border rounded-card text-center">
-        <p className="text-muted">
+        <p className="text-muted font-serif">
           Subscribe to specification updates on{' '}
           <a
-            href="https://github.com/plasmate-labs/plasmate"
+            href="https://github.com/nicholasgriffintn/som-spec"
             target="_blank"
             rel="noopener noreferrer"
             className="text-accent hover:underline"

@@ -5,20 +5,26 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: '#0A0A0F',
-        surface: '#16161F',
-        border: '#2A2A3A',
-        accent: '#7C3AED',
-        green: '#00B894',
-        text: '#F8F8F2',
-        muted: '#8E8EA0',
+        bg: '#080C10',
+        surface: '#0F1419',
+        border: '#1E2A38',
+        accent: '#C7A853',
+        code: '#5BA4CF',
+        text: '#E8DCC8',
+        muted: '#6B7D8F',
+        highlight: '#E63946',
+        success: '#52B788',
       },
       borderRadius: {
-        card: '12px',
+        card: '8px',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        mono: ['JetBrains Mono', 'Fira Code', 'Consolas', 'monospace'],
+        display: ['var(--font-fraunces)', 'Georgia', 'serif'],
+        serif: ['var(--font-source-serif)', 'Georgia', 'serif'],
+        mono: ['var(--font-mono)', 'Consolas', 'monospace'],
+      },
+      lineHeight: {
+        'body': '1.8',
       },
     },
   },

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 function RefSection({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
     <section id={id} className="mb-20 scroll-mt-24">
-      <h2 className="text-2xl font-bold text-text mb-6 pb-3 border-b border-border">{title}</h2>
+      <h2 className="text-2xl font-display font-light text-text mb-6 pb-3 border-b border-border">{title}</h2>
       {children}
     </section>
   )
@@ -22,9 +22,9 @@ function TypeCard({ name, description, attrs, actions, example }: {
   example: string
 }) {
   return (
-    <div id={`type-${name}`} className="bg-surface border border-border rounded-card p-6 scroll-mt-24">
+    <div id={`type-${name}`} className="bg-surface border border-border rounded-card p-6 scroll-mt-24" style={{ borderLeftWidth: '3px', borderLeftColor: 'rgba(199, 168, 83, 0.15)' }}>
       <div className="flex items-start justify-between mb-3">
-        <h3 className="text-lg font-semibold text-text font-mono">{name}</h3>
+        <h3 className="text-lg font-display text-text font-mono">{name}</h3>
         {actions.length > 0 && (
           <div className="flex gap-1.5">
             {actions.map((a) => (
@@ -35,17 +35,17 @@ function TypeCard({ name, description, attrs, actions, example }: {
           </div>
         )}
       </div>
-      <p className="text-sm text-muted mb-4">{description}</p>
+      <p className="text-sm text-muted mb-4 font-serif">{description}</p>
 
       {attrs.length > 0 && (
         <div className="mb-4">
-          <h4 className="text-xs font-semibold text-text uppercase tracking-wider mb-2">Attributes</h4>
+          <h4 className="text-xs font-display text-text uppercase tracking-wider mb-2">Attributes</h4>
           <div className="space-y-2">
             {attrs.map((attr) => (
               <div key={attr.name} className="flex gap-3 text-sm">
-                <code className="text-green font-mono shrink-0">{attr.name}</code>
-                <span className="text-muted/60 font-mono text-xs mt-0.5">({attr.type})</span>
-                <span className="text-muted">{attr.description}</span>
+                <code className="text-code font-mono shrink-0">{attr.name}</code>
+                <span className="text-muted/40 font-mono text-xs mt-0.5">({attr.type})</span>
+                <span className="text-muted font-serif">{attr.description}</span>
               </div>
             ))}
           </div>
@@ -53,8 +53,8 @@ function TypeCard({ name, description, attrs, actions, example }: {
       )}
 
       <div>
-        <h4 className="text-xs font-semibold text-text uppercase tracking-wider mb-2">Example</h4>
-        <pre className="bg-bg border border-border rounded-lg p-3 text-xs font-mono text-muted overflow-x-auto">
+        <h4 className="text-xs font-display text-text uppercase tracking-wider mb-2">Example</h4>
+        <pre className="bg-bg border border-border rounded-card p-3 text-xs font-mono text-muted overflow-x-auto">
           <code>{example}</code>
         </pre>
       </div>
@@ -318,45 +318,47 @@ const regionRoles = [
 export default function ReferencePage() {
   return (
     <div className="mx-auto max-w-5xl px-6 py-16 md:py-24">
-      <div className="mb-16">
-        <span className="text-xs font-mono uppercase tracking-widest text-accent mb-3 block">Reference</span>
-        <h1 className="text-4xl md:text-5xl font-extrabold text-text mb-4">API Reference</h1>
-        <p className="text-lg text-muted leading-relaxed max-w-2xl">
+      <div className="mb-20">
+        <span className="text-xs font-mono uppercase tracking-[0.2em] text-accent/60 mb-4 block">Reference</span>
+        <h1 className="text-4xl md:text-5xl font-display font-light text-text mb-4">API Reference</h1>
+        <p className="text-lg text-muted font-serif leading-body max-w-2xl">
           Complete reference for all SOM element types, region roles, attributes, actions, and semantic hints.
         </p>
       </div>
 
+      <hr className="hr-ornament mb-16" />
+
       {/* Quick nav */}
-      <nav className="mb-16 p-6 bg-surface border border-border rounded-card">
-        <h2 className="text-sm font-semibold text-text uppercase tracking-wider mb-4">Jump to</h2>
+      <nav className="mb-20 p-6 bg-surface border border-border rounded-card">
+        <h2 className="text-sm font-display text-text uppercase tracking-wider mb-4">Jump to</h2>
         <div className="flex flex-wrap gap-2">
-          <a href="#regions" className="text-sm text-muted hover:text-accent transition-colors px-3 py-1 bg-bg border border-border rounded-full">Regions</a>
-          <a href="#element-types" className="text-sm text-muted hover:text-accent transition-colors px-3 py-1 bg-bg border border-border rounded-full">Element Types</a>
-          <a href="#actions" className="text-sm text-muted hover:text-accent transition-colors px-3 py-1 bg-bg border border-border rounded-full">Actions</a>
-          <a href="#hints" className="text-sm text-muted hover:text-accent transition-colors px-3 py-1 bg-bg border border-border rounded-full">Hints</a>
-          <a href="#aria-states" className="text-sm text-muted hover:text-accent transition-colors px-3 py-1 bg-bg border border-border rounded-full">ARIA States</a>
+          <a href="#regions" className="text-sm text-muted hover:text-accent transition-colors px-3 py-1.5 bg-bg border border-border rounded-full font-serif">Regions</a>
+          <a href="#element-types" className="text-sm text-muted hover:text-accent transition-colors px-3 py-1.5 bg-bg border border-border rounded-full font-serif">Element Types</a>
+          <a href="#actions" className="text-sm text-muted hover:text-accent transition-colors px-3 py-1.5 bg-bg border border-border rounded-full font-serif">Actions</a>
+          <a href="#hints" className="text-sm text-muted hover:text-accent transition-colors px-3 py-1.5 bg-bg border border-border rounded-full font-serif">Hints</a>
+          <a href="#aria-states" className="text-sm text-muted hover:text-accent transition-colors px-3 py-1.5 bg-bg border border-border rounded-full font-serif">ARIA States</a>
         </div>
       </nav>
 
       <RefSection id="regions" title="Region Roles">
-        <p className="text-muted mb-6">
+        <p className="text-muted mb-6 font-serif">
           Regions are the top-level grouping construct in SOM. Every element belongs to exactly one region.
         </p>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-border">
-                <th className="py-3 px-4 text-left font-medium text-text">Role</th>
-                <th className="py-3 px-4 text-left font-medium text-text">Description</th>
-                <th className="py-3 px-4 text-left font-medium text-text">Typical Content</th>
+                <th className="py-3 px-4 text-left font-display font-medium text-text">Role</th>
+                <th className="py-3 px-4 text-left font-display font-medium text-text">Description</th>
+                <th className="py-3 px-4 text-left font-display font-medium text-text">Typical Content</th>
               </tr>
             </thead>
             <tbody>
               {regionRoles.map((r) => (
                 <tr key={r.role} className="border-b border-border/30 hover:bg-surface/30">
-                  <td className="py-3 px-4 font-mono text-green">{r.role}</td>
-                  <td className="py-3 px-4 text-muted">{r.description}</td>
-                  <td className="py-3 px-4 text-muted/70 text-xs">{r.typical}</td>
+                  <td className="py-3 px-4 font-mono text-code">{r.role}</td>
+                  <td className="py-3 px-4 text-muted font-serif">{r.description}</td>
+                  <td className="py-3 px-4 text-muted/50 text-xs font-serif">{r.typical}</td>
                 </tr>
               ))}
             </tbody>
@@ -365,7 +367,7 @@ export default function ReferencePage() {
       </RefSection>
 
       <RefSection id="element-types" title="Element Types">
-        <p className="text-muted mb-6">
+        <p className="text-muted mb-6 font-serif">
           Each element type below includes its description, allowed attributes, supported actions, and a JSON example.
         </p>
         <div className="space-y-4">
@@ -376,7 +378,7 @@ export default function ReferencePage() {
       </RefSection>
 
       <RefSection id="actions" title="Actions">
-        <p className="text-muted mb-6">
+        <p className="text-muted mb-6 font-serif">
           Actions describe what an agent can do with an element. Each action maps to a specific interaction pattern.
         </p>
         <div className="space-y-3">
@@ -387,28 +389,28 @@ export default function ReferencePage() {
             ['toggle', 'Toggles the element state. For checkboxes, switches checked/unchecked. For details, opens/closes.'],
             ['clear', 'Clears the current value of the element. Valid for text_input and textarea.'],
           ].map(([name, desc]) => (
-            <div key={name} className="pl-4 border-l-2 border-accent/20 py-2">
-              <code className="text-green font-mono text-sm">{name}</code>
-              <p className="text-sm text-muted mt-1">{desc}</p>
+            <div key={name} className="pl-4 border-l-2 border-accent/15 py-2">
+              <code className="text-code font-mono text-sm">{name}</code>
+              <p className="text-sm text-muted mt-1 font-serif">{desc}</p>
             </div>
           ))}
         </div>
       </RefSection>
 
       <RefSection id="hints" title="Hints">
-        <p className="text-muted mb-6">
+        <p className="text-muted mb-6 font-serif">
           Hints are CSS-inferred semantic signals that provide additional context about an element&apos;s visual presentation and likely purpose.
         </p>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-border">
-                <th className="py-3 px-4 text-left font-medium text-text">Hint</th>
-                <th className="py-3 px-4 text-left font-medium text-text">Type</th>
-                <th className="py-3 px-4 text-left font-medium text-text">Description</th>
+                <th className="py-3 px-4 text-left font-display font-medium text-text">Hint</th>
+                <th className="py-3 px-4 text-left font-display font-medium text-text">Type</th>
+                <th className="py-3 px-4 text-left font-display font-medium text-text">Description</th>
               </tr>
             </thead>
-            <tbody className="text-muted">
+            <tbody className="text-muted font-serif">
               {[
                 ['visually_hidden', 'boolean', 'Element is visually hidden but present in the accessibility tree (screen-reader only content)'],
                 ['primary', 'boolean', 'Element appears to be a primary/prominent action based on visual styling (size, color, position)'],
@@ -417,8 +419,8 @@ export default function ReferencePage() {
                 ['truncated', 'boolean', 'Text content appears to be truncated with ellipsis or overflow hidden'],
               ].map(([name, type, desc]) => (
                 <tr key={name} className="border-b border-border/30">
-                  <td className="py-3 px-4 font-mono text-green">{name}</td>
-                  <td className="py-3 px-4 font-mono text-xs text-muted/60">{type}</td>
+                  <td className="py-3 px-4 font-mono text-code">{name}</td>
+                  <td className="py-3 px-4 font-mono text-xs text-muted/40">{type}</td>
                   <td className="py-3 px-4">{desc}</td>
                 </tr>
               ))}
@@ -428,20 +430,20 @@ export default function ReferencePage() {
       </RefSection>
 
       <RefSection id="aria-states" title="ARIA States">
-        <p className="text-muted mb-6">
+        <p className="text-muted mb-6 font-serif">
           ARIA states capture dynamic widget state from ARIA attributes. These are included in the element&apos;s aria field.
         </p>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-border">
-                <th className="py-3 px-4 text-left font-medium text-text">State</th>
-                <th className="py-3 px-4 text-left font-medium text-text">Type</th>
-                <th className="py-3 px-4 text-left font-medium text-text">Source</th>
-                <th className="py-3 px-4 text-left font-medium text-text">Description</th>
+                <th className="py-3 px-4 text-left font-display font-medium text-text">State</th>
+                <th className="py-3 px-4 text-left font-display font-medium text-text">Type</th>
+                <th className="py-3 px-4 text-left font-display font-medium text-text">Source</th>
+                <th className="py-3 px-4 text-left font-display font-medium text-text">Description</th>
               </tr>
             </thead>
-            <tbody className="text-muted">
+            <tbody className="text-muted font-serif">
               {[
                 ['expanded', 'boolean', 'aria-expanded', 'Whether a collapsible section is currently expanded'],
                 ['checked', 'boolean | "mixed"', 'aria-checked', 'Check state of checkboxes and radio buttons'],
@@ -453,8 +455,8 @@ export default function ReferencePage() {
                 ['readonly', 'boolean', 'aria-readonly', 'Whether the element value is read-only'],
               ].map(([state, type, source, desc]) => (
                 <tr key={state} className="border-b border-border/30">
-                  <td className="py-3 px-4 font-mono text-green">{state}</td>
-                  <td className="py-3 px-4 font-mono text-xs text-muted/60">{type}</td>
+                  <td className="py-3 px-4 font-mono text-code">{state}</td>
+                  <td className="py-3 px-4 font-mono text-xs text-muted/40">{type}</td>
                   <td className="py-3 px-4 font-mono text-xs">{source}</td>
                   <td className="py-3 px-4">{desc}</td>
                 </tr>
