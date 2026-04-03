@@ -321,7 +321,9 @@ Disallow: /api/`}</CodeBlock>
           <p>
             Empirical research by Hurley (2026) in{' '}
             <em>Agent Compliance with robots.txt SOM Directives: Empirical Evidence of
-            the Discovery Gap</em> found that even agents capable of honoring SOM
+            the Discovery Gap</em>{' '}
+            <Link href="https://dbhurley.com/papers" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-mono text-xs">[9]</Link>{' '}
+            found that even agents capable of honoring SOM
             directives frequently fail to check for them. The primary causes are:
           </p>
           <ul className="list-disc list-inside space-y-2 mt-2 pl-2">

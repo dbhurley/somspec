@@ -411,6 +411,21 @@ export default function SpecPage() {
           </li>
         </ul>
       </div>
+
+      <div className="mt-12 p-6 bg-surface border border-border rounded-card">
+        <h2 className="text-sm font-display text-text uppercase tracking-wider mb-4">References</h2>
+        <ol className="space-y-2 font-mono text-xs text-muted leading-relaxed list-none">
+          <li>[1] Hurley, D. (2026). The Semantic Object Model: A Token-Efficient Web Representation for AI Agents. arXiv cs.IR/cs.AI. <Link href="https://dbhurley.com/papers" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">dbhurley.com/papers</Link></li>
+          <li>[2] Hurley, D. (2026). The Agentic Web: Rethinking Web Infrastructure for Machine Consumption. arXiv cs.AI/cs.CY. <Link href="https://dbhurley.com/papers" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">dbhurley.com/papers</Link></li>
+          <li>[3] Hurley, D. (2026). Agent Web Protocol: A Purpose-Built Communication Protocol for AI Agent-Web Interaction. arXiv cs.NI/cs.SE. <Link href="https://dbhurley.com/papers" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">dbhurley.com/papers</Link></li>
+          <li>[4] Hurley, D. (2026). Cooperative Content Negotiation for the Agentic Web: Extending robots.txt for AI Agents. arXiv cs.CY/cs.IR. <Link href="https://dbhurley.com/papers" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">dbhurley.com/papers</Link></li>
+          <li>[5] Hurley, D. (2026). The Hidden Tax: Quantifying Token Waste in Agent-Web Interaction. arXiv cs.AI/cs.CY. <Link href="https://dbhurley.com/papers" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">dbhurley.com/papers</Link></li>
+          <li>[6] Hurley, D. (2026). Does Format Matter? Agent Task Performance Across Web Representations. arXiv. <Link href="https://dbhurley.com/papers" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">dbhurley.com/papers</Link></li>
+          <li>[7] Hurley, D. (2026). The Publisher&apos;s Calculus: A Cost-Benefit Analysis of Serving Structured Representations to AI Agents. arXiv cs.AI/cs.CY. <Link href="https://dbhurley.com/papers" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">dbhurley.com/papers</Link></li>
+          <li>[8] Hurley, D. (2026). Information Fidelity Under Semantic Compression. arXiv cs.AI/cs.CY. <Link href="https://dbhurley.com/papers" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">dbhurley.com/papers</Link></li>
+          <li>[9] Hurley, D. (2026). Agent Compliance with robots.txt SOM Directives: Empirical Evidence of the Discovery Gap. arXiv cs.AI/cs.CY. <Link href="https://dbhurley.com/papers" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">dbhurley.com/papers</Link></li>
+        </ol>
+      </div>
     </div>
   )
 }
