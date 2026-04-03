@@ -110,23 +110,23 @@ export default function Home() {
                 <span className="font-mono text-xs tracking-[0.2em] uppercase text-muted block mb-6">
                   Open Specification v1.0
                 </span>
-                <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-light tracking-tight mb-8 leading-[1.1]">
-                  The Web Format<br />
-                  <span className="text-accent">for AI Agents</span>
+                <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-light tracking-tight mb-8 leading-[1.1] text-text">
+                  Structured Object Model
                 </h1>
               </div>
 
               <p className="animate-fade-in-delay-1 font-serif text-lg md:text-xl text-muted max-w-2xl leading-body mb-10">
-                A formal, open specification for representing web pages as structured
-                JSON — compact, typed, and purpose-built for language model consumption.
+                An open specification for representing web pages as structured JSON.
+                SOM defines typed element roles, stable identifiers, and semantic regions
+                — producing documents an order of magnitude smaller than raw HTML.
               </p>
 
-              <div className="animate-fade-in-delay-2 flex flex-wrap gap-4 mb-6">
+              <div className="animate-fade-in-delay-2 flex flex-wrap gap-4 mb-10">
                 <Link
                   href="/spec"
                   className="px-7 py-3.5 bg-accent hover:bg-accent/90 text-bg font-display font-medium rounded-card transition-all hover:shadow-lg hover:shadow-accent/20 text-sm tracking-wide"
                 >
-                  Read the Spec
+                  Read the Specification
                 </Link>
                 <a
                   href="https://github.com/nicholasgriffintn/som-spec"
@@ -134,14 +134,12 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="px-7 py-3.5 text-text border border-border hover:border-accent/40 font-display font-medium rounded-card transition-all text-sm tracking-wide"
                 >
-                  View on GitHub
+                  GitHub
                 </a>
               </div>
 
-              <div className="animate-fade-in-delay-2 flex flex-wrap gap-4 mb-16 text-xs font-mono text-muted">
-                <span className="px-3 py-1.5 border border-border/60 rounded-full">17x average token reduction</span>
-                <span className="px-3 py-1.5 border border-border/60 rounded-full">Apache 2.0</span>
-                <span className="px-3 py-1.5 border border-border/60 rounded-full">W3C Community Group</span>
+              <div className="animate-fade-in-delay-2 mb-16 font-mono text-[11px] text-muted/50 tracking-wide">
+                Version 1.0 &nbsp;&middot;&nbsp; Apache 2.0 License &nbsp;&middot;&nbsp; W3C Community Group Proposal
               </div>
 
               <div className="animate-fade-in-delay-3 glow-gold rounded-card">
@@ -158,10 +156,10 @@ export default function Home() {
       <section className="py-24 reveal">
         <SectionWithGutter number="02">
           <div className="px-6">
-            <span className="font-mono text-xs tracking-[0.2em] uppercase text-accent/60 block mb-3">Comparison</span>
-            <h2 className="font-display text-3xl md:text-4xl font-light text-text mb-3">Why SOM?</h2>
+            <span className="font-mono text-xs tracking-[0.2em] uppercase text-accent/60 block mb-3">Format Analysis</span>
+            <h2 className="font-display text-3xl md:text-4xl font-light text-text mb-3">Related Formats</h2>
             <p className="text-muted font-serif leading-body max-w-2xl mb-10">
-              SOM replaces raw HTML, Markdown, and accessibility trees as the format AI agents use to understand web pages.
+              Prior to SOM, agent pipelines consumed web content as raw HTML, stripped Markdown, or accessibility trees — each a repurposing of a format designed for other consumers. The table below characterises the trade-offs.
             </p>
             <ComparisonTable />
           </div>
