@@ -5,15 +5,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: '#080C10',
-        surface: '#0F1419',
-        border: '#1E2A38',
-        accent: '#C7A853',
-        code: '#5BA4CF',
-        text: '#E8DCC8',
-        muted: '#6B7D8F',
-        highlight: '#E63946',
-        success: '#52B788',
+        bg: '#FAF8F3',
+        surface: '#F2EDE3',
+        border: '#DDD4C2',
+        accent: '#8A6420',
+        code: '#7A3E12',
+        text: '#1C1209',
+        muted: '#6B5E48',
+        highlight: '#8B1A1A',
+        success: '#1A6B3A',
       },
       borderRadius: {
         card: '8px',

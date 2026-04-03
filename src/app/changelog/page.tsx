@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Changelog - SOMspec',
+  title: 'Changelog',
   description: 'Version history of the SOM specification.',
+  alternates: { canonical: '/changelog' },
 }
 
 const releases = [
@@ -64,7 +65,7 @@ export default function ChangelogPage() {
             key={release.version}
             className="relative pl-8 border-l-2 border-accent/20"
           >
-            <div className="absolute left-0 top-0 -translate-x-[9px] w-4 h-4 rounded-full bg-accent border-4 border-bg" />
+            <div className="absolute left-0 top-0 -translate-x-[9px] w-4 h-4 rounded-full bg-accent border-4 border-[#FAF8F3]" />
 
             <div className="mb-8">
               <div className="flex flex-wrap items-center gap-3 mb-2">

@@ -10,13 +10,13 @@
   }
 
   body {
-    background-image: radial-gradient(circle at 1px 1px, rgba(30, 42, 56, 0.3) 1px, transparent 0);
+    background-image: radial-gradient(circle at 1px 1px, rgba(140, 110, 70, 0.12) 1px, #FAF8F3 0);
     background-size: 32px 32px;
   }
 
   ::selection {
-    background: rgba(199, 168, 83, 0.25);
-    color: #E8DCC8;
+    background: rgba(138, 100, 32, 0.25);
+    color: #1C1209;
   }
 
   ::-webkit-scrollbar {
@@ -24,22 +24,22 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: #080C10;
+    background: #E8E2D8;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #1E2A38;
+    background: #C8BDA8;
     border-radius: 4px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #2A3A4E;
+    background: #B0A48E;
   }
 }
 
 @layer components {
   .glow-gold {
-    box-shadow: 0 0 80px rgba(199, 168, 83, 0.08), 0 0 160px rgba(199, 168, 83, 0.03);
+    box-shadow: 0 2px 24px rgba(138, 100, 32, 0.08);
   }
 
   .code-block {
@@ -48,44 +48,44 @@
 
   .code-block .line-number {
     @apply select-none pr-4 text-right inline-block w-8;
-    color: #3A4A5C;
+    color: #B0A48E;
   }
 
   .code-block .key {
-    color: #5BA4CF;
+    color: #2B5EA7;
   }
 
   .code-block .string {
-    color: #C7A853;
+    color: #8A6420;
   }
 
   .code-block .number {
-    color: #52B788;
+    color: #1A6B3A;
   }
 
   .code-block .boolean {
-    color: #5BA4CF;
+    color: #2B5EA7;
   }
 
   .code-block .comment {
     @apply italic;
-    color: #3A4A5C;
+    color: #A09070;
   }
 
   .code-block .keyword {
-    color: #E63946;
+    color: #8B1A1A;
   }
 
   .code-block .function {
-    color: #C7A853;
+    color: #8A6420;
   }
 
   .code-block .variable {
-    color: #5BA4CF;
+    color: #2B5EA7;
   }
 
   .code-block .import {
-    color: #E63946;
+    color: #8B1A1A;
   }
 
   .card-hover {
@@ -93,13 +93,13 @@
   }
 
   .card-hover:hover {
-    border-color: rgba(199, 168, 83, 0.3);
-    box-shadow: 0 0 30px rgba(199, 168, 83, 0.06);
+    border-color: rgba(138, 100, 32, 0.3);
+    box-shadow: 0 2px 24px rgba(138, 100, 32, 0.08);
   }
 
   .prose-dark {
-    @apply prose prose-invert prose-headings:text-text prose-p:text-muted prose-a:text-accent prose-strong:text-text prose-code:bg-surface prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:before:content-none prose-code:after:content-none prose-pre:bg-surface prose-pre:border prose-pre:border-border prose-hr:border-border prose-th:text-text prose-td:text-muted;
-    --tw-prose-code: #5BA4CF;
+    @apply prose prose-headings:text-text prose-p:text-muted prose-a:text-accent prose-strong:text-text prose-code:bg-surface prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:before:content-none prose-code:after:content-none prose-pre:bg-surface prose-pre:border prose-pre:border-border prose-hr:border-border prose-th:text-text prose-td:text-muted;
+    --tw-prose-code: #7A3E12;
   }
 
   /* Section margin numerals */
@@ -108,7 +108,7 @@
     font-size: clamp(6rem, 10vw, 10rem);
     font-weight: 300;
     line-height: 1;
-    color: rgba(199, 168, 83, 0.06);
+    color: rgba(138, 100, 32, 0.10);
     user-select: none;
     pointer-events: none;
   }
@@ -121,12 +121,12 @@
     background: linear-gradient(
       to right,
       transparent,
-      #1E2A38 20%,
-      #C7A853 50%,
-      #1E2A38 80%,
+      rgba(138, 100, 32, 0.15) 20%,
+      rgba(138, 100, 32, 0.3) 50%,
+      rgba(138, 100, 32, 0.15) 80%,
       transparent
     );
-    opacity: 0.4;
+    opacity: 1;
   }
 
   .hr-ornament::after {
@@ -135,9 +135,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #080C10;
+    background: #FAF8F3;
     padding: 0 12px;
-    color: rgba(199, 168, 83, 0.3);
+    color: rgba(138, 100, 32, 0.3);
     font-size: 14px;
   }
 
@@ -150,7 +150,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    opacity: 0.03;
+    opacity: 0.02;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     background-size: 256px 256px;
     pointer-events: none;

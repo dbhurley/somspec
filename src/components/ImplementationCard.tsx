@@ -42,7 +42,7 @@ export default function ImplementationCards() {
           target="_blank"
           rel="noopener noreferrer"
           className="block p-6 bg-surface border border-border rounded-card card-hover group"
-          style={{ borderLeftWidth: '3px', borderLeftColor: 'rgba(199, 168, 83, 0.25)' }}
+          style={{ borderLeftWidth: '3px', borderLeftColor: 'rgba(138, 100, 32, 0.25)' }}
         >
           <div className="flex items-start justify-between mb-3">
             <h3 className="font-display text-text group-hover:text-accent transition-colors">

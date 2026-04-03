@@ -1,0 +1,20 @@
+# SOMspec - Structured Object Model Specification
+
+SOMspec defines SOM (Structured Object Model), an open JSON format for representing web pages for AI agent consumption.
+
+## Key resources
+- Specification: https://somspec.org/spec
+- Reference: https://somspec.org/reference
+- GitHub: https://github.com/nicholasgriffintn/som-spec
+- Reference implementation: https://plasmate.app
+
+## About SOM
+SOM replaces raw HTML as the format AI agents use to understand web pages.
+- 17x fewer tokens than raw HTML on average
+- Typed element roles (link, button, heading, input, etc.)
+- Stable SHA-256 element IDs across fetches
+- Semantic region detection (main, nav, aside, footer)
+- Publisher-servable as alternate representation
+
+## License
+Apache 2.0

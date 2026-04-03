@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Reference - SOMspec',
+  title: 'Reference',
   description: 'Complete reference for SOM element types, regions, attributes, and actions.',
+  alternates: { canonical: '/reference' },
 }
 
 function RefSection({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
@@ -22,7 +23,7 @@ function TypeCard({ name, description, attrs, actions, example }: {
   example: string
 }) {
   return (
-    <div id={`type-${name}`} className="bg-surface border border-border rounded-card p-6 scroll-mt-24" style={{ borderLeftWidth: '3px', borderLeftColor: 'rgba(199, 168, 83, 0.15)' }}>
+    <div id={`type-${name}`} className="bg-surface border border-border rounded-card p-6 scroll-mt-24" style={{ borderLeftWidth: '3px', borderLeftColor: 'rgba(138, 100, 32, 0.15)' }}>
       <div className="flex items-start justify-between mb-3">
         <h3 className="text-lg font-display text-text font-mono">{name}</h3>
         {actions.length > 0 && (

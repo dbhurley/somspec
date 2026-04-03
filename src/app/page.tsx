@@ -40,6 +40,23 @@ const heroCode = `{
   }
 }`
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "name": "Structured Object Model Specification v1.0",
+  "description": "An open specification for representing web pages as structured JSON for AI agent consumption.",
+  "url": "https://somspec.org",
+  "version": "1.0",
+  "datePublished": "2026-01-01",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Plasmate Labs",
+    "url": "https://plasmate.app"
+  },
+  "license": "https://www.apache.org/licenses/LICENSE-2.0",
+  "programmingLanguage": "JSON"
+}
+
 function useScrollReveal() {
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -88,6 +105,11 @@ export default function Home() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Hero */}
       <section className="relative overflow-hidden noise-overlay">
         {/* Left gold accent line */}
@@ -98,7 +120,7 @@ export default function Home() {
             {/* Left gutter — SOM watermark */}
             <div className="hidden lg:flex w-[15%] shrink-0 justify-end pr-6 pt-32">
               <div className="sticky top-24">
-                <span className="font-display text-[10rem] font-light leading-none tracking-tight" style={{ color: 'rgba(199, 168, 83, 0.04)' }}>
+                <span className="font-display text-[10rem] font-light leading-none tracking-tight" style={{ color: 'rgba(138, 100, 32, 0.06)' }}>
                   S<br/>O<br/>M
                 </span>
               </div>
@@ -159,7 +181,7 @@ export default function Home() {
             <span className="font-mono text-xs tracking-[0.2em] uppercase text-accent/60 block mb-3">Format Analysis</span>
             <h2 className="font-display text-3xl md:text-4xl font-light text-text mb-3">Related Formats</h2>
             <p className="text-muted font-serif leading-body max-w-2xl mb-10">
-              Prior to SOM, agent pipelines consumed web content as raw HTML, stripped Markdown, or accessibility trees — each a repurposing of a format designed for other consumers. The table below characterises the trade-offs.
+              Prior to SOM, agent pipelines consumed web content as raw HTML, stripped Markdown, or accessibility trees — each a repurposing of a format designed for other consumers. The table below characterises the trade-offs. See <Link href="/spec" className="text-accent hover:underline">the full specification</Link> for normative definitions.
             </p>
             <ComparisonTable />
           </div>

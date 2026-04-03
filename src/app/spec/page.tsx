@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'SOM Specification v1.0 - SOMspec',
+  title: 'Specification v1.0',
   description: 'The complete Semantic Object Model specification, version 1.0.',
+  alternates: { canonical: '/spec' },
 }
 
 function Section({ id, number, title, children }: { id: string; number: string; title: string; children: React.ReactNode }) {
@@ -385,6 +387,22 @@ export default function SpecPage() {
           Consumers must ignore unrecognized fields rather than treating them as errors.
         </p>
       </Section>
+
+      <hr className="hr-ornament mb-12" />
+
+      <div className="p-6 bg-surface border border-border rounded-card">
+        <h2 className="text-sm font-display text-text uppercase tracking-wider mb-3">See also</h2>
+        <ul className="space-y-2 text-sm font-serif">
+          <li>
+            <Link href="/reference" className="text-accent hover:underline">API Reference</Link>
+            <span className="text-muted"> — Complete reference for all element types, region roles, attributes, and actions.</span>
+          </li>
+          <li>
+            <Link href="/changelog" className="text-accent hover:underline">Changelog</Link>
+            <span className="text-muted"> — Version history of the SOM specification.</span>
+          </li>
+        </ul>
+      </div>
     </div>
   )
 }

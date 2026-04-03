@@ -73,7 +73,7 @@ export default function ComparisonTable() {
     <div className="w-full overflow-x-auto">
       <table className="w-full text-sm border-collapse" style={{ borderSpacing: 0 }}>
         <thead>
-          <tr style={{ borderTop: '1px solid rgba(199,168,83,0.25)', borderBottom: '1px solid rgba(199,168,83,0.25)' }}>
+          <tr style={{ borderTop: '1px solid rgba(138,100,32,0.3)', borderBottom: '1px solid rgba(138,100,32,0.3)' }}>
             <th className="py-3 pr-6 text-left font-display font-medium text-text text-xs uppercase tracking-widest w-48">
               Property
             </th>
@@ -94,7 +94,7 @@ export default function ComparisonTable() {
             <tr
               key={row.feature}
               style={{
-                borderBottom: i < rows.length - 1 ? '1px solid rgba(199,168,83,0.06)' : 'none',
+                borderBottom: i < rows.length - 1 ? '1px solid rgba(138,100,32,0.10)' : 'none',
               }}
             >
               <td className="py-4 pr-6 align-top">
@@ -108,7 +108,7 @@ export default function ComparisonTable() {
                   <td
                     key={f}
                     className={`py-4 px-4 align-top font-serif leading-snug ${
-                      isSom ? 'bg-accent/[0.025]' : ''
+                      isSom ? 'bg-[rgba(138,100,32,0.04)]' : ''
                     }`}
                   >
                     <span className={cellClass(cell.sentiment as Sentiment, isSom)}>
@@ -121,7 +121,7 @@ export default function ComparisonTable() {
           ))}
         </tbody>
         <tfoot>
-          <tr style={{ borderTop: '1px solid rgba(199,168,83,0.25)' }}>
+          <tr style={{ borderTop: '1px solid rgba(138,100,32,0.3)' }}>
             <td colSpan={5} className="pt-3 pb-0 font-mono text-[10px] text-muted/40 leading-relaxed">
               Token estimates derived from the Plasmate benchmark suite (51 sites, April 2026).
               A11y Tree figures represent Playwright accessibility snapshot output.

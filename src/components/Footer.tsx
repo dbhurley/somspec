@@ -1,9 +1,11 @@
 import Link from 'next/link'
 
 const footerLinks = [
+  { href: '/spec', label: 'Specification' },
+  { href: '/reference', label: 'Reference' },
+  { href: '/changelog', label: 'Changelog' },
   { href: 'https://github.com/nicholasgriffintn/som-spec', label: 'Spec on GitHub', external: true },
   { href: 'https://plasmate.app', label: 'plasmate.app', external: true },
-  { href: '/changelog', label: 'Changelog' },
 ]
 
 export default function Footer() {
@@ -12,7 +14,7 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <div className="w-6 h-6 rounded flex items-center justify-center border border-accent/20" style={{ background: 'rgba(199, 168, 83, 0.06)' }}>
+            <div className="w-6 h-6 rounded flex items-center justify-center border border-accent/20" style={{ background: 'rgba(138, 100, 32, 0.06)' }}>
               <span className="text-accent font-display font-semibold text-[10px]">S</span>
             </div>
             <span className="text-sm text-muted font-display">SOMspec</span>
