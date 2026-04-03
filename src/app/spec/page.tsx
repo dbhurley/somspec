@@ -401,6 +401,14 @@ export default function SpecPage() {
             <Link href="/changelog" className="text-accent hover:underline">Changelog</Link>
             <span className="text-muted"> — Version history of the SOM specification.</span>
           </li>
+          <li>
+            <Link href="/directives" className="text-accent hover:underline">Agent Directives</Link>
+            <span className="text-muted"> — A proposal for how publishers express AI agent interaction preferences.</span>
+          </li>
+          <li>
+            <Link href="/validate" className="text-accent hover:underline">SOM Validator</Link>
+            <span className="text-muted"> — Check whether a SOM document conforms to the specification.</span>
+          </li>
         </ul>
       </div>
     </div>

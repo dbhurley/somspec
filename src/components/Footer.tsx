@@ -3,6 +3,8 @@ import Link from 'next/link'
 const footerLinks = [
   { href: '/spec', label: 'Specification' },
   { href: '/reference', label: 'Reference' },
+  { href: '/directives', label: 'Directives' },
+  { href: '/validate', label: 'Validate' },
   { href: '/changelog', label: 'Changelog' },
   { href: 'https://github.com/nicholasgriffintn/som-spec', label: 'Spec on GitHub', external: true },
   { href: 'https://plasmate.app', label: 'plasmate.app', external: true },

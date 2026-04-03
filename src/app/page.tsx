@@ -181,7 +181,7 @@ export default function Home() {
             <span className="font-mono text-xs tracking-[0.2em] uppercase text-accent/60 block mb-3">Format Analysis</span>
             <h2 className="font-display text-3xl md:text-4xl font-light text-text mb-3">Related Formats</h2>
             <p className="text-muted font-serif leading-body max-w-2xl mb-10">
-              Prior to SOM, agent pipelines consumed web content as raw HTML, stripped Markdown, or accessibility trees — each a repurposing of a format designed for other consumers. The table below characterises the trade-offs. See <Link href="/spec" className="text-accent hover:underline">the full specification</Link> for normative definitions.
+              Prior to SOM, agent pipelines consumed web content as raw HTML, stripped Markdown, or accessibility trees — each a repurposing of a format designed for other consumers. The table below characterises the trade-offs. See <Link href="/spec" className="text-accent hover:underline">the full specification</Link> for normative definitions. Publishers can also declare agent interaction preferences via <Link href="/directives" className="text-accent hover:underline">Agent Directives</Link>.
             </p>
             <ComparisonTable />
           </div>

@@ -6,6 +6,8 @@ import Link from 'next/link'
 const links = [
   { href: '/spec', label: 'Specification' },
   { href: '/reference', label: 'Reference' },
+  { href: '/directives', label: 'Directives' },
+  { href: '/validate', label: 'Validate' },
   { href: '/changelog', label: 'Changelog' },
   { href: 'https://github.com/nicholasgriffintn/som-spec', label: 'GitHub', external: true },
 ]
