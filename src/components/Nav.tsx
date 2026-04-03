@@ -9,7 +9,7 @@ const links = [
   { href: '/directives', label: 'Directives' },
   { href: '/validate', label: 'Validate' },
   { href: '/changelog', label: 'Changelog' },
-  { href: 'https://github.com/nicholasgriffintn/som-spec', label: 'GitHub', external: true },
+  { href: 'https://github.com/dbhurley/somspec', label: 'GitHub', external: true },
 ]
 
 export default function Nav() {

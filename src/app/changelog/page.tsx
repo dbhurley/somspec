@@ -104,7 +104,7 @@ export default function ChangelogPage() {
         <p className="text-muted font-serif">
           Subscribe to specification updates on{' '}
           <a
-            href="https://github.com/nicholasgriffintn/som-spec"
+            href="https://github.com/dbhurley/somspec"
             target="_blank"
             rel="noopener noreferrer"
             className="text-accent hover:underline"

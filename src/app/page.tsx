@@ -151,7 +151,7 @@ export default function Home() {
                   Read the Specification
                 </Link>
                 <a
-                  href="https://github.com/nicholasgriffintn/som-spec"
+                  href="https://github.com/dbhurley/somspec"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-7 py-3.5 text-text border border-border hover:border-accent/40 font-display font-medium rounded-card transition-all text-sm tracking-wide"
