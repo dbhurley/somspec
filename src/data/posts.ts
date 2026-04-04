@@ -9,6 +9,14 @@ export interface Post {
 
 export const posts: Post[] = [
   {
+    slug:        'techcrunch-was-blocked',
+    title:       'TechCrunch Was Blocked. Now It\'s 77×. What Changed?',
+    date:        '2026-04-04',
+    description: 'Plasmate v0.5.0 fixed something important: major news sites blocked by anti-bot protection now fetch cleanly. TechCrunch went from the failure list to 77× compression — the highest in the news vertical.',
+    readingTime: '5 min read',
+    tags:        ['Benchmarks', 'v0.5.0', 'News & Media'],
+  },
+  {
     slug:        'the-discovery-gap',
     title:       'The Discovery Gap: Why AI Agents Miss Your SOM Directives',
     date:        '2026-04-04',
