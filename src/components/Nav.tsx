@@ -19,6 +19,7 @@ const communityLinks = [
 const allMobileLinks = [
   ...mainLinks,
   ...communityLinks,
+  { href: '/blog', label: 'Blog' },
   { href: '/changelog', label: 'Changelog' },
   { href: 'https://github.com/dbhurley/somspec', label: 'GitHub', external: true },
 ]
@@ -88,6 +89,9 @@ export default function Nav() {
             )}
           </div>
 
+          <Link href="/blog" className="text-sm text-muted hover:text-accent transition-colors font-serif">
+            Blog
+          </Link>
           <Link href="/changelog" className="text-sm text-muted hover:text-accent transition-colors font-serif">
             Changelog
           </Link>

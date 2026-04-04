@@ -3,6 +3,7 @@
 import { useEffect } from 'react'
 import Link from 'next/link'
 import CodeBlock from '@/components/CodeBlock'
+import { posts } from '@/data/posts'
 import ComparisonTable from '@/components/ComparisonTable'
 import SpecAccordion from '@/components/SpecAccordion'
 import GetStartedTabs from '@/components/GetStartedTabs'
@@ -184,6 +185,41 @@ export default function Home() {
               Prior to SOM, agent pipelines consumed web content as raw HTML, stripped Markdown, or accessibility trees — each a repurposing of a format designed for other consumers. The table below characterises the trade-offs. See <Link href="/spec" className="text-accent hover:underline">the full specification</Link> for normative definitions. Publishers can also declare agent interaction preferences via <Link href="/directives" className="text-accent hover:underline">Agent Directives</Link>.
             </p>
             <ComparisonTable />
+          </div>
+        </SectionWithGutter>
+      </section>
+
+      <hr className="hr-ornament my-0" />
+
+      {/* From the blog */}
+      <section className="py-24 reveal">
+        <SectionWithGutter number="02b">
+          <div className="px-6">
+            <span className="font-mono text-xs tracking-[0.2em] uppercase text-accent/60 block mb-3">From the Blog</span>
+            <h2 className="font-display text-3xl md:text-4xl font-light text-text mb-8">Latest Writing</h2>
+            <div className="grid gap-4">
+              {posts.map((post) => (
+                <Link
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  className="block bg-surface border border-border rounded-card p-5 hover:border-accent/40 transition-colors group"
+                >
+                  <div className="flex items-center gap-3 mb-2">
+                    <time className="font-mono text-xs text-muted/60">{post.date}</time>
+                    <span className="text-muted/30">&middot;</span>
+                    <span className="font-mono text-xs text-muted/60">{post.readingTime}</span>
+                  </div>
+                  <h3 className="font-display text-lg text-text group-hover:text-accent transition-colors">
+                    {post.title}
+                  </h3>
+                </Link>
+              ))}
+            </div>
+            <div className="mt-6">
+              <Link href="/blog" className="font-serif text-sm text-accent hover:underline">
+                All posts &rarr;
+              </Link>
+            </div>
           </div>
         </SectionWithGutter>
       </section>
