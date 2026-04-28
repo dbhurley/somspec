@@ -12,18 +12,34 @@ export default function BlogArticleLayout({ post, children }: Props) {
   const cat = getCategory(post.category)
   const url = `https://somspec.org/blog/${post.slug}`
 
+  // Parse "X min read" → ISO 8601 duration for AEO
+  const minutesMatch = post.readingTime.match(/(\d+)\s*min/i)
+  const minutes = minutesMatch ? parseInt(minutesMatch[1], 10) : null
+  const timeRequired = minutes ? `PT${minutes}M` : undefined
+  // Approximate word count from reading time (avg ~225 wpm)
+  const wordCount = minutes ? minutes * 225 : undefined
+
   const blogPostingSchema = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.description,
+    abstract: post.description,
     datePublished: post.date,
     dateModified: post.date,
-    author: { '@type': 'Organization', name: 'SOMspec', url: 'https://somspec.org' },
+    author: {
+      '@type': 'Organization',
+      name: 'SOMspec',
+      url: 'https://somspec.org',
+    },
     publisher: {
       '@type': 'Organization',
       name: 'Plasmate Labs',
       url: 'https://plasmate.app',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://somspec.org/og-image.png',
+      },
       sameAs: [
         'https://github.com/plasmate-labs/plasmate',
         'https://docs.plasmate.app',
@@ -32,10 +48,35 @@ export default function BlogArticleLayout({ post, children }: Props) {
     },
     keywords: post.tags.join(', '),
     articleSection: cat.label,
+    about: post.tags.map((tag) => ({ '@type': 'Thing', name: tag })),
     url,
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
     inLanguage: 'en-US',
     isAccessibleForFree: true,
+    isPartOf: {
+      '@type': 'Blog',
+      name: 'SOMspec Writing',
+      url: 'https://somspec.org/blog',
+    },
+    image: 'https://somspec.org/og-image.png',
+    ...(timeRequired ? { timeRequired } : {}),
+    ...(wordCount ? { wordCount } : {}),
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', '.prose-som > p:first-child'],
+    },
+  }
+
+  // Breadcrumb schema for richer indexing
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://somspec.org/' },
+      { '@type': 'ListItem', position: 2, name: 'Writing', item: 'https://somspec.org/blog' },
+      { '@type': 'ListItem', position: 3, name: cat.label, item: `https://somspec.org/blog#cat-${cat.slug}` },
+      { '@type': 'ListItem', position: 4, name: post.title, item: url },
+    ],
   }
 
   return (
@@ -43,6 +84,10 @@ export default function BlogArticleLayout({ post, children }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       <div className="mx-auto max-w-7xl px-6">

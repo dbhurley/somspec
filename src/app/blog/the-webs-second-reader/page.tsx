@@ -326,6 +326,16 @@ export default function TheWebsSecondReader() {
         For a check of whether your own site already serves the second reader, see{' '}
         <a href="https://somready.com" target="_blank" rel="noopener noreferrer">somready.com</a>.
       </p>
+
+      <p>
+        Companion pieces: the practical deployment guide is{' '}
+        <Link href="/blog/som-vs-llms-txt">SOM vs llms.txt: When to Use Which</Link>; the
+        adjacent question of how an agent talks to its tools is covered in{' '}
+        <Link href="/blog/som-vs-mcp">SOM vs MCP: How Publishers and Agents Are Different
+        Problems</Link>; the empirical evidence for the cost claim is in{' '}
+        <Link href="/blog/three-weeks-of-public-benchmarks">What Three Weeks of Public
+        Benchmarks Reveal About the Web&rsquo;s Token Bill</Link>.
+      </p>
     </BlogArticleLayout>
   )
 }

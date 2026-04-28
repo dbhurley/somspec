@@ -455,6 +455,15 @@ export default function ThreeWeeksOfPublicBenchmarks() {
       </p>
 
       <p>
+        Related context: the cost numbers above are what motivates the layered approach
+        outlined in <Link href="/blog/som-vs-llms-txt">SOM vs llms.txt: When to Use
+        Which</Link>, the protocol-versus-format distinction in{' '}
+        <Link href="/blog/som-vs-mcp">SOM vs MCP: How Publishers and Agents Are Different
+        Problems</Link>, and the historical framing in{' '}
+        <Link href="/blog/the-webs-second-reader">The Web&rsquo;s Second Reader</Link>.
+      </p>
+
+      <p>
         The next quarterly retrospective will publish after the next major Plasmate release
         and the addition of e-commerce and community-forum verticals to the registry.
       </p>

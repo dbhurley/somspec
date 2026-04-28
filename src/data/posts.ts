@@ -74,6 +74,15 @@ export const posts: Post[] = [
     featured:    true,
   },
   {
+    slug:        'som-vs-mcp',
+    title:       'SOM vs MCP: How Publishers and Agents Are Different Problems',
+    date:        '2026-04-30',
+    description: 'MCP is the protocol an agent uses to talk to its tools. SOM is the format a publisher uses to describe a web page. They are routinely confused, frequently positioned as alternatives, and in fact occupy different layers of the stack — designed to compose, not compete.',
+    readingTime: '8 min read',
+    tags:        ['MCP', 'Specification', 'Comparison', 'Architecture', 'Agents'],
+    category:    'specification',
+  },
+  {
     slug:        'the-webs-second-reader',
     title:       'The Web’s Second Reader',
     date:        '2026-04-29',

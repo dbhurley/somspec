@@ -128,8 +128,10 @@ export default function SomVsLlmsTxt() {
         <strong>First, both formats arrived to solve the same anxiety.</strong> Publishers and
         framework authors woke up to the realisation that AI agents had become a meaningful
         share of their traffic, and that those agents were paying enormous token costs to read
-        HTML that was never designed for them. Both llms.txt and SOM are attempts to give
-        agents a friendlier surface. But identical motivation does not imply identical scope.
+        HTML that was never designed for them — order-of-magnitude costs, as the latest{' '}
+        <Link href="/blog/three-weeks-of-public-benchmarks">public benchmark numbers</Link>{' '}
+        confirm. Both llms.txt and SOM are attempts to give agents a friendlier surface. But
+        identical motivation does not imply identical scope.
       </p>
 
       <p>
@@ -380,6 +382,15 @@ Sitemap: https://acme.dev/sitemap.xml`}</code></pre>
         <Link href="/validate">validator</Link>. For a list of publishers already shipping the
         full stack, see the{' '}
         <Link href="/publishers">publishers leaderboard</Link>.
+      </p>
+
+      <p>
+        Further reading on the layered architecture this post hints at:{' '}
+        <Link href="/blog/som-vs-mcp">SOM vs MCP: How Publishers and Agents Are Different
+        Problems</Link> covers the next layer down — the protocol an agent uses to talk to its
+        tools, of which a SOM endpoint is one. For the historical framing of why a second
+        reader-format was always coming, see{' '}
+        <Link href="/blog/the-webs-second-reader">The Web&rsquo;s Second Reader</Link>.
       </p>
     </BlogArticleLayout>
   )
