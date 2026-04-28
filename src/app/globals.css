@@ -213,3 +213,286 @@
   animation: fadeIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.40s forwards;
   opacity: 0;
 }
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Article prose — applies to .prose-som on every blog article.
+   Generous line height (1.85), proper heading hierarchy, colored list
+   markers, styled blockquotes, and code blocks. Designed for reading.
+   ────────────────────────────────────────────────────────────────────── */
+.prose-som {
+  font-size: 17px;
+  line-height: 1.85;
+  color: #2a1f12;
+  max-width: 68ch;
+}
+
+.prose-som > * + * {
+  margin-top: 1.4em;
+}
+
+.prose-som p,
+.prose-som li {
+  font-family: var(--font-source-serif), Georgia, serif;
+  letter-spacing: 0.005em;
+}
+
+.prose-som p {
+  text-wrap: pretty;
+}
+
+.prose-som strong {
+  color: #1C1209;
+  font-weight: 600;
+}
+
+.prose-som em {
+  color: #3a2c18;
+}
+
+.prose-som a {
+  color: #8A6420;
+  text-decoration: underline;
+  text-decoration-color: rgba(138, 100, 32, 0.35);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 200ms ease, text-decoration-color 200ms ease;
+}
+
+.prose-som a:hover {
+  color: #1C1209;
+  text-decoration-color: #1C1209;
+}
+
+/* Headings — hierarchy + spacing + ornament */
+.prose-som h2 {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 400;
+  font-size: 1.65rem;
+  line-height: 1.25;
+  color: #1C1209;
+  letter-spacing: -0.01em;
+  margin-top: 3em;
+  margin-bottom: 0.8em;
+  padding-bottom: 0.4em;
+  position: relative;
+}
+
+.prose-som h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 3rem;
+  height: 1px;
+  background: rgba(138, 100, 32, 0.4);
+}
+
+.prose-som h3 {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: #1C1209;
+  margin-top: 2.4em;
+  margin-bottom: 0.6em;
+  letter-spacing: -0.005em;
+}
+
+.prose-som h4 {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #1C1209;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  text-transform: none;
+}
+
+/* Lists with colored markers */
+.prose-som ul,
+.prose-som ol {
+  padding-left: 1.5rem;
+  margin-top: 1.2em;
+}
+
+.prose-som li {
+  margin-top: 0.5em;
+  padding-left: 0.4em;
+}
+
+.prose-som ul > li::marker {
+  content: '◆ ';
+  color: #8A6420;
+  font-size: 0.7em;
+}
+
+.prose-som ol {
+  counter-reset: prose-ol;
+  list-style: none;
+}
+
+.prose-som ol > li {
+  counter-increment: prose-ol;
+  position: relative;
+  padding-left: 1.8em;
+}
+
+.prose-som ol > li::before {
+  content: counter(prose-ol) '.';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 500;
+  color: #8A6420;
+  width: 1.4em;
+  text-align: right;
+}
+
+/* Inline code */
+.prose-som code {
+  font-family: var(--font-mono), Consolas, monospace;
+  font-size: 0.9em;
+  background: rgba(138, 100, 32, 0.08);
+  color: #7A3E12;
+  padding: 0.1em 0.4em;
+  border-radius: 3px;
+  border: 1px solid rgba(138, 100, 32, 0.12);
+}
+
+.prose-som a code {
+  color: inherit;
+}
+
+/* Code blocks */
+.prose-som pre {
+  background: #F2EDE3;
+  border: 1px solid #DDD4C2;
+  border-left: 3px solid #8A6420;
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  font-family: var(--font-mono), Consolas, monospace;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  overflow-x: auto;
+  color: #1C1209;
+  margin: 1.8em 0;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+}
+
+.prose-som pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* Blockquotes */
+.prose-som blockquote {
+  margin: 2em 0;
+  padding: 0.5em 0 0.5em 1.5em;
+  border-left: 3px solid #8A6420;
+  background: linear-gradient(90deg, rgba(138, 100, 32, 0.06), transparent 80%);
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-style: italic;
+  font-size: 1.15em;
+  line-height: 1.7;
+  color: #2a1f12;
+}
+
+.prose-som blockquote p {
+  font-family: inherit;
+}
+
+.prose-som blockquote::before {
+  content: '\201C';
+  display: block;
+  font-size: 3em;
+  line-height: 0;
+  color: rgba(138, 100, 32, 0.3);
+  margin-bottom: 0.4em;
+  margin-left: -0.1em;
+}
+
+/* Tables */
+.prose-som table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2em 0;
+  font-size: 0.92em;
+  font-family: var(--font-source-serif), Georgia, serif;
+  border: 1px solid #DDD4C2;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.prose-som thead {
+  background: #F2EDE3;
+}
+
+.prose-som th {
+  text-align: left;
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 500;
+  color: #1C1209;
+  padding: 0.75em 1em;
+  border-bottom: 1px solid #DDD4C2;
+  font-size: 0.9em;
+}
+
+.prose-som td {
+  padding: 0.75em 1em;
+  border-bottom: 1px solid rgba(221, 212, 194, 0.5);
+  vertical-align: top;
+  color: #3a2c18;
+}
+
+.prose-som tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.prose-som tbody tr:hover {
+  background: rgba(138, 100, 32, 0.03);
+}
+
+/* Horizontal rules within prose */
+.prose-som hr {
+  border: none;
+  height: 1px;
+  margin: 3em auto;
+  width: 60%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(138, 100, 32, 0.3),
+    transparent
+  );
+}
+
+/* Figures + captions */
+.prose-som figcaption {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-style: italic;
+  font-size: 0.85em;
+  color: #6B5E48;
+  text-align: center;
+  margin-top: 0.5em;
+}
+
+/* Drop-cap on the very first paragraph */
+.prose-som > p:first-child::first-letter {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 400;
+  font-size: 3.6em;
+  line-height: 0.85;
+  float: left;
+  margin: 0.05em 0.12em 0 0;
+  color: #8A6420;
+}
+
+/* Featured-card hover state hook */
+.featured-card:focus-visible article,
+.post-card:focus-visible article {
+  outline: 2px solid #8A6420;
+  outline-offset: 4px;
+}

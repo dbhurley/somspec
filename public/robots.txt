@@ -1,3 +1,15 @@
 User-agent: *
 Allow: /
+
+# Site-level introduction for AI agents (llms.txt convention)
+# https://somspec.org/llms.txt
+
+# Per-page structured representation — see https://somspec.org/directives
+SOM-Endpoint:     https://somspec.org/api/v1/som
+SOM-Format:       SOM/1.0
+SOM-Scope:        main-content
+SOM-Freshness:    3600
+SOM-Token-Budget: 8000
+SOM-Attribution:  https://somspec.org/spec
+
 Sitemap: https://somspec.org/sitemap.xml
