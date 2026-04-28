@@ -74,6 +74,15 @@ export const posts: Post[] = [
     featured:    true,
   },
   {
+    slug:        'the-webs-second-reader',
+    title:       'The Web’s Second Reader',
+    date:        '2026-04-29',
+    description: 'The web had one reader for thirty years. Tim Berners-Lee saw the second reader coming, but his Semantic Web asked humans to do the writing. AI agents are the readers he predicted, and the format they need is the one that finally serves both audiences without forcing either to compromise.',
+    readingTime: '11 min read',
+    tags:        ['History', 'Semantic Web', 'Berners-Lee', 'Standards', 'Industry'],
+    category:    'industry',
+  },
+  {
     slug:        'som-vs-llms-txt',
     title:       'SOM vs llms.txt: When to Use Which',
     date:        '2026-04-27',
