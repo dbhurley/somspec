@@ -64,6 +64,16 @@ export function getCategory(slug: CategorySlug): Category {
 
 export const posts: Post[] = [
   {
+    slug:        'three-weeks-of-public-benchmarks',
+    title:       'What Three Weeks of Public Benchmarks Reveal About the Web’s Token Bill',
+    date:        '2026-04-28',
+    description: 'Three weeks. Two Plasmate releases. Thirty-eight production sites. The WebTaskBench public benchmark gives the first defensible empirical answer to a question publishers and agent authors have been asking each other since 2024: how much of the web’s token cost is actually load-bearing?',
+    readingTime: '9 min read',
+    tags:        ['Benchmarks', 'WebTaskBench', 'v0.5.0', 'v0.5.1', 'Token Economics'],
+    category:    'benchmarks',
+    featured:    true,
+  },
+  {
     slug:        'som-vs-llms-txt',
     title:       'SOM vs llms.txt: When to Use Which',
     date:        '2026-04-27',
@@ -71,7 +81,6 @@ export const posts: Post[] = [
     readingTime: '7 min read',
     tags:        ['llms.txt', 'Specification', 'Publishers', 'Comparison'],
     category:    'industry',
-    featured:    true,
   },
   {
     slug:        'techcrunch-was-blocked',
